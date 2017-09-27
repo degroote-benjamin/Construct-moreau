@@ -13,7 +13,7 @@ foreach ($dataproject as $valuedataproject) {
     } ?>
   </ul>
   <div class="card-block">
-    <a href="controle/index.php?id=<?php echo $valuedataproject['id_project']?>" class="card-link">See more</a>
+    <a href="control/index.php?id=<?php echo $valuedataproject['id_project']?>" class="card-link">See more</a>
   </div>
 </div>
 <?php
