@@ -7,6 +7,9 @@ if (!isset($_GET['id'])) {
     $dataprojectstep = get_project_step();
     include '../view/index.php';
 } else {
-    include 'detail.php';
+    $valuedataprojectid = get_project_id($_GET['id']);
+    $datastepid = get_step_id($_GET['id']);
+    $datatask = get_task();
+    include '../view/detail.php';
 }
 include 'footer.php';
