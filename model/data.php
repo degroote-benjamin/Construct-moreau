@@ -86,3 +86,14 @@ function add_project($name,$des,$id,$date,$user){
   'user'=>$user
   ));
 }
+
+
+function add_step($name,$des,$id){
+  global $bdd;
+  $reponse = $bdd->prepare('INSERT INTO  step  (step_name ,  description_step ,  id_project ) VALUES (:name, :des, :id);');
+  $reponse->execute(array(
+  'name'=>$name,
+  'des'=>$des,
+  'id'=>$id,
+  ));
+}

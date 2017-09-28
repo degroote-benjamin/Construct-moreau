@@ -1,3 +1,5 @@
+<h2 class="text-center my-2">Update / Delete project</h2>
+<p class="text-center my-2">Cick on project name for see all step for this project</p>
 <div class="container">
 <table class="table table-responsive d-flex justify-content-center">
   <tr class="thead-inverse">
@@ -31,18 +33,22 @@
 
 </div>
 
+<h2 class="text-center my-4">Add project</h2>
+
 <div class="container">
-<form class="text-center" action="project_area.php" method="post">
+<form class="text-center my-5" action="project_area.php" method="post">
   <div class="form-group">
-  <input type="text" name="project_name" value="" placeholder="project_name">
-
+    <label for="project_name">Project name</label>
+  <input type="text" name="project_name" value="" class="form-control" placeholder="project_name" id="project_name">
 </div>
 <div class="form-group">
-  <input type="text" name="description_project" value="" placeholder="description">
-
+  <label for="description_project"> project description</label>
+  <textarea name="description_project" class="form-control" id="description_project" value="" placeholder="description">
+  </textarea>
 </div>
 <div class="form-group">
-    <select class="" name="id_category">
+  <label for="category">project category</label>
+    <select name="id_category" class="form-control">
       <?php
       foreach ($datacategory as $valuecategory) {
           ?>
@@ -52,8 +58,8 @@
 
   </div>
   <div class="form-group">
-    <input type="date" name="end_date" value="" placeholder="end_date">
-
+    <label for="end_date">End date</label>
+    <input class="form-control" id="end_date" type="date" name="end_date" value="" placeholder="end_date">
   </div>
     <input type="submit" name="submitproject" value="submit" class="btn btn-primary">
 </form>
