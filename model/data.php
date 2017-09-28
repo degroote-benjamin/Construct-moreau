@@ -8,6 +8,13 @@ function get_project(){
   return $reponse->fetchAll();
 }
 
+function get_project_category()
+{
+    global $bdd;
+    $reponse = $bdd->query('SELECT * from project INNER JOIN category ON category.id_category = project.id_category');
+    return $reponse->fetchAll();
+}
+
 function get_project_step()
 {
     global $bdd;
@@ -53,3 +60,11 @@ function get_step_id($id)
   ));
     return $reponse->fetchALL();
 };
+
+function delete_project($id){
+global $bdd;
+$reponse = $bdd->prepare('DELETE project , step , task from project inner join step on project.id_project = step.id_project and project.id_project = :id inner join task on task.id_step = step.id_step');
+$reponse->execute(array(
+'id'=>$id
+));
+}
