@@ -63,7 +63,7 @@ function get_step_id($id)
 
 function delete_project($id){
 global $bdd;
-$reponse = $bdd->prepare('DELETE project , step , task from project inner join step on project.id_project = step.id_project and project.id_project = :id inner join task on task.id_step = step.id_step');
+$reponse = $bdd->prepare('DELETE project , step , task from project LEFT join step on project.id_project = step.id_project  LEFT join task on task.id_step = step.id_step WHERE project.id_project =:id');
 $reponse->execute(array(
 'id'=>$id
 ));

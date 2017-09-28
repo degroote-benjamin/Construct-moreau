@@ -17,9 +17,9 @@
         <td><?php echo $valueproject['description_project'] ?></td>
         <td><?php echo $valueproject['category_name'] ?></td>
         <td><?php echo $valueproject['end_date'] ?></td>
-        <td><a href="../controle/espace.php?updateid=<?php echo $donnees['id_article']; ?>"><i class="fa fa-wrench" aria-hidden="true"></i></a></td>
+        <td><a href="../controle/update_project.php?updateid=<?php echo $valueproject['id_project']; ?>"><i class="fa fa-wrench" aria-hidden="true"></i></a></td>
 <td>
-<a href="../controle/project_area.php?deleteid=<?php echo $donnees['id_article']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+<a href="../control/project_area.php?deleteid=<?php echo $valueproject['id_project']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
 </td>
       </tr>
       <?php
