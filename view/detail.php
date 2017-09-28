@@ -1,6 +1,6 @@
 <h2><?php echo $valuedataprojectid['project_name'];?></h2>
 
-<ul>
+<ul class="list-group">
 <?php foreach ($datastepid as $key => $valuedatastepid) {
     ?>
 
