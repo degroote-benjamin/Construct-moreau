@@ -18,7 +18,7 @@
         <td><?php echo $valuestep['description_step'] ?></td>
         <td><a href="../controle/step_area.php?updateid=<?php echo $valuestep['id_project']; ?>"><i class="fa fa-wrench" aria-hidden="true"></i></a></td>
 <td>
-<a href="../control/step_area.php?deleteid=<?php echo $valuestep['id_project']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+<a href="../control/step_area.php?deleteid=<?php echo $valuestep['id_step']; ?>&amp;id_project=<?php echo $id;?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
 </td>
       </tr>
       <?php
@@ -42,11 +42,7 @@
   <textarea name="description_step" class="form-control" id="description_step" value="" placeholder="description">
   </textarea>
 </div>
-<?php if(isset($_GET["id_project"])) {?>
-    <input type="hidden" name="id" value="<?php echo $_GET['id_project']; ?>">
-    <?php } else {?>
-        <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
-        <?php } ?>
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
     <input type="submit" name="submitstep" value="submit" class="btn btn-primary">
 </form>
 

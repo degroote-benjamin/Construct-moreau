@@ -61,14 +61,6 @@ function get_step_id($id)
     return $reponse->fetchALL();
 };
 
-function delete_project($id){
-global $bdd;
-$reponse = $bdd->prepare('DELETE project , step , task from project LEFT join step on project.id_project = step.id_project  LEFT join task on task.id_step = step.id_step WHERE project.id_project =:id');
-$reponse->execute(array(
-'id'=>$id
-));
-}
-
 function get_category(){
   global $bdd;
   $reponse = $bdd->query('SELECT * from category');
@@ -96,4 +88,12 @@ function add_step($name,$des,$id){
   'des'=>$des,
   'id'=>$id,
   ));
+}
+
+function delete_step($id){
+global $bdd;
+$reponse = $bdd->prepare('DELETE step , task from step LEFT join task on task.id_step = step.id_step WHERE step.id_step =:id');
+$reponse->execute(array(
+'id'=>$id
+));
 }

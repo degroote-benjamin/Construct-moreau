@@ -13,6 +13,9 @@ if(isset($_POST['step_name']) && isset($_POST['description_step'])){
 add_step($_POST['step_name'],$_POST['description_step'],$id);
 }
 }
+if(isset($_GET['deleteid'])){
+delete_step($_GET['deleteid']);
+}
 $datastep=get_step_id($id);
 include 'header.php';
 include '../view/space_step.php';
