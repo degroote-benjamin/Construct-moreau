@@ -1,3 +1,5 @@
+<div class="container">
+  <div class="row d-flex justify-content-between">
 <?php
 foreach ($dataproject as $valuedataproject) {
     ?>
@@ -7,9 +9,12 @@ foreach ($dataproject as $valuedataproject) {
   </div>
   <ul class="list-group list-group-flush">
     <?php foreach ($dataprojectstep as $valuedataprojectstep) {
+      if ($valuedataprojectstep['id_project'] == $valuedataproject['id_project']){
         ?>
+
     <li class="list-group-item"><?php echo $valuedataprojectstep['step_name'] ?></li>
     <?php
+  }
     } ?>
   </ul>
   <div class="card-block">
@@ -19,3 +24,6 @@ foreach ($dataproject as $valuedataproject) {
 <?php
 }
  ?>
+
+</div>
+</div>
