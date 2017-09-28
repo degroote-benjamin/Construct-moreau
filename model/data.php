@@ -68,3 +68,21 @@ $reponse->execute(array(
 'id'=>$id
 ));
 }
+
+function get_category(){
+  global $bdd;
+  $reponse = $bdd->query('SELECT * from category');
+  return $reponse->fetchAll();
+}
+
+function add_project($name,$des,$id,$date,$user){
+  global $bdd;
+  $reponse = $bdd->prepare('INSERT INTO  project  (project_name ,  description_project ,  id_category ,  end_date ,  id_user ) VALUES (:name, :des, :id, :date1, :user);');
+  $reponse->execute(array(
+  'name'=>$name,
+  'des'=>$des,
+  'id'=>$id,
+  'date1'=>$date,
+  'user'=>$user
+  ));
+}
