@@ -1,7 +1,7 @@
 
     <div class="container">
 
-      <form class="form-signin">
+      <form class="form-signin" method="post" action="../control/login.php">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label class="my-4" for="inputEmail" >Pseudo</label>
         <input type="text" id="inputEmail" class="form-control" placeholder="Pseudo" required autofocus>
