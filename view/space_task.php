@@ -1,5 +1,4 @@
 <h2 class="text-center my-2">Update / Delete task</h2>
-<p class="text-center my-2">Cick on step name for see all task for this step</p>
 <div class="container">
 <table class="table table-responsive d-flex justify-content-center">
   <tr class="thead-inverse">
