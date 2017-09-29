@@ -14,7 +14,7 @@
         ?>
       <tr>
         <td><?php echo $valuestep['id_step']; ?></td>
-        <td><a href="../control/step_area.php?id_project=<?php echo $valuestep['id_step']?>"><?php echo $valuestep['step_name'] ?></a></td>
+        <td><a href="../control/task_area.php?id_step=<?php echo $valuestep['id_step']?>"><?php echo $valuestep['step_name'] ?></a></td>
         <td><?php echo $valuestep['description_step'] ?></td>
         <td><a href="../controle/step_area.php?updateid=<?php echo $valuestep['id_project']; ?>"><i class="fa fa-wrench" aria-hidden="true"></i></a></td>
 <td>

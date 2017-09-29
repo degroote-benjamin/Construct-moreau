@@ -13,8 +13,8 @@ if(isset($_POST["submitproject"])){
 }
 
 // table with all project and their category name
-$dataproject = get_project_category();
 $datacategory = get_category();
+$dataproject = get_project_category();
 
 include 'header.php';
 include '../view/space.php';
