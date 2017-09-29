@@ -141,3 +141,13 @@ function delete_task($id)
 'id'=>$id
 ));
 }
+
+function add_user($pseudo,$mail,$pass){
+  global $bdd;
+  $reponse = $bdd->prepare('INSERT INTO  user  (pseudo , mail ,  pass ) VALUES (:pseudo, :mail, :pass);');
+  $reponse->execute(array(
+'pseudo'=>$pseudo,
+'mail'=>$mail,
+'pass'=>$pass,
+));
+}
