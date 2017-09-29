@@ -2,6 +2,15 @@
 include 'sqlconnect.php';
 $bdd = connect();
 
+function get_user($pseudo){
+  global $bdd;
+  $reponse = $bdd->prepare('SELECT * from user where pseudo = :pseudo');
+  $reponse->execute(array(
+  'pseudo'=>$pseudo
+));
+  return $reponse->fetch();
+}
+
 function get_project()
 {
     global $bdd;

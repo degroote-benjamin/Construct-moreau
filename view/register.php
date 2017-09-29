@@ -4,6 +4,9 @@
       <form class="form-signin" action="../control/register.php" method="post">
         <h2 class="form-signin-heading text-center">Please register</h2>
         <label class="my-4"for="inputPseudo">Pseudo</label>
+        <?php if(isset($_SESSION['error']['pseudo'])){ ?>
+      <span class="alert alert-danger mx-3" role="alert">pseudo already take</span>
+      <?php } ?>
         <input type="text" name="pseudo" id="inputPseudo" class="form-control" placeholder="Pseudo" required autofocus>
         <label class="my-4"for="inputPassword">Password
           <?php if(isset($_SESSION['error']['pass'])){ ?>
@@ -15,7 +18,7 @@
         <input type="password" name="passconf" id="inputPassword1" class="form-control" placeholder="Confirm Password" required>
         <label class="my-4"for="inputEmail">Email address</label>
         <input type="email" name ="email" id="inputEmail" class="form-control" placeholder="Email address" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submitregister">Register</button>
+        <button class="btn btn-lg btn-primary btn-block my-4" type="submit" name="submitregister">Register</button>
       </form>
 
     </div>
