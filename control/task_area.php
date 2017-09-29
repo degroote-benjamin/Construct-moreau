@@ -9,6 +9,15 @@ $id = $_GET['id_step'];
 else{
   $id= $_POST['id'];
 }
+if(isset($_GET['deleteid'])){
+delete_task($_GET['deleteid']);
+}
+
+if(isset($_POST['submittask'])){
+if(isset($_POST['task_name']) && isset($_POST['end_date'])){
+add_task($_POST['task_name'],$_POST['end_date'],$id);
+}
+}
 
 $datatask=get_task_id($id);
 

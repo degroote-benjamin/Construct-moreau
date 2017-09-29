@@ -69,6 +69,7 @@ function get_task_id($id)
     $reponse->execute(array(
 'id'=>$id
 ));
+    return $reponse->fetchALL();
 }
 
 function get_category()
@@ -103,6 +104,17 @@ function add_step($name, $des, $id)
   ));
 }
 
+function add_task($name, $date, $id)
+{
+    global $bdd;
+    $reponse = $bdd->prepare('INSERT INTO  task  (task_name , end_date ,  id_step ) VALUES (:name, :date, :id);');
+    $reponse->execute(array(
+'name'=>$name,
+'date'=>$date,
+'id'=>$id,
+));
+}
+
 function delete_project($id)
 {
     global $bdd;
@@ -116,6 +128,15 @@ function delete_step($id)
 {
     global $bdd;
     $reponse = $bdd->prepare('DELETE step , task from step LEFT join task on task.id_step = step.id_step WHERE step.id_step =:id');
+    $reponse->execute(array(
+'id'=>$id
+));
+}
+
+function delete_task($id)
+{
+    global $bdd;
+    $reponse = $bdd->prepare('DELETE from task where id_task = :id');
     $reponse->execute(array(
 'id'=>$id
 ));
