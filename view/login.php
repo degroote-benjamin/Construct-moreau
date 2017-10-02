@@ -1,8 +1,10 @@
 
     <div class="container">
-
       <form class="form-signin" method="post" action="../control/login.php">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading my-4">Please sign in</h2>
+        <?php if (isset($_SESSION['error']['formlogin'])): ?>
+          <span class="alert alert-danger" role="alert">pseudo or pass wrong</span><br>
+        <?php endif; ?>
         <label class="my-4" for="inputEmail" >Pseudo</label>
         <input type="text" id="inputEmail" class="form-control" name ="pseudo" placeholder="Pseudo" required autofocus>
         <label class="my-4" for="inputPassword">Password</label>
