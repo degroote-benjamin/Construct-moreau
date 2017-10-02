@@ -30,8 +30,8 @@
         <![endif]-->
 
 <header class="jumbotron">
-  <h1 class="text-align">Moreau-construct</h1>
-  <p class="text-align">take a look of all project , click on see more for see task for each step</p>
+  <h1 class="text-center">Moreau-construct</h1>
+  <p class="text-center">take a look of all project</p>
   <ul class="nav justify-content-end">
   <li class="nav-item">
     <a class="nav-link active" href="../control/index.php">HomePage</a>

@@ -26,6 +26,15 @@ function get_project_category()
     return $reponse->fetchAll();
 }
 
+function get_project_category_user($user){
+  global $bdd;
+  $reponse = $bdd->prepare('SELECT * from project INNER JOIN category ON category.id_category = project.id_category INNER JOIN user on project.id_user = user.id_user where project.id_user = :id');
+  $reponse->execute(array(
+  'id'=>$user
+));
+  return $reponse->fetchAll();
+}
+
 function get_project_step()
 {
     global $bdd;

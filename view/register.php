@@ -1,5 +1,5 @@
 
-    <div class="container">
+    <div class="container container-min">
 
       <form class="form-signin" action="../control/register.php" method="post">
         <h2 class="form-signin-heading text-center">Please register</h2>

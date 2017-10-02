@@ -1,5 +1,5 @@
 
-    <div class="container">
+    <div class="container container-min">
       <form class="form-signin" method="post" action="../control/login.php">
         <h2 class="form-signin-heading my-4">Please sign in</h2>
         <?php if (isset($_SESSION['error']['formlogin'])): ?>
