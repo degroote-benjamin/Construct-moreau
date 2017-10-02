@@ -6,6 +6,7 @@ foreach ($dataproject as $valuedataproject) {
             <div class="card my-3" style="width: 20rem;">
                 <div class="card-block">
                     <h4 class="card-title"><?php echo $valuedataproject['project_name']?></h4>
+                    <p class="text-right">End_date :   <?php echo $valuedataproject['end_date']?></p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <?php foreach ($dataprojectstep as $valuedataprojectstep) {

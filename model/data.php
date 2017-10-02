@@ -15,7 +15,7 @@ function get_user($pseudo){
 function get_project()
 {
     global $bdd;
-    $reponse = $bdd->query('SELECT * from project');
+    $reponse = $bdd->query('SELECT * from project order by end_date');
     return $reponse->fetchAll();
 }
 
@@ -168,5 +168,15 @@ function add_user($pseudo,$mail,$pass){
 'pseudo'=>$pseudo,
 'mail'=>$mail,
 'pass'=>$pass,
+));
+}
+
+function update_task($id){
+  global $bdd;
+  $reponse = $bdd->prepare('UPDATE task
+SET finish = 1
+WHERE id_task = $id');
+  $reponse->execute(array(
+'id'=>$id,
 ));
 }

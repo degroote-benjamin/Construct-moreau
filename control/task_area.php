@@ -13,6 +13,10 @@ if(isset($_GET['deleteid'])){
 delete_task($_GET['deleteid']);
 }
 
+if(isset($_GET['updateid'])){
+update_task($_GET['updateid']);
+}
+
 if(isset($_POST['submittask'])){
 if(isset($_POST['task_name']) && isset($_POST['end_date'])){
 add_task($_POST['task_name'],$_POST['end_date'],$id);
