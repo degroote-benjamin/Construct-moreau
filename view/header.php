@@ -31,4 +31,25 @@
 
 <header class="jumbotron">
   <h1>BONJOUR</h1>
+  <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href="../control/index.php">HomePage</a>
+  </li>
+  <?php if (isset($_SESSION['pseudo']) and isset($_SESSION['id'])){?>
+    <li class="nav-item">
+      <a class="nav-link" href="../control/project_area.php">Your project</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../control/register.php">Log out</a>
+    </li>
+  <?php}
+  else { ?>
+  <li class="nav-item">
+    <a class="nav-link" href="../control/login.php">Log in</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../control/register.php">Register</a>
+  </li>
+  <?php } ?>
+</ul>
 </header>
