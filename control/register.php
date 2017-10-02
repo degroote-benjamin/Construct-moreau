@@ -1,6 +1,5 @@
 <?php
 include_once('../model/data.php');
-session_start();
 
 include 'header.php';
 // if click on submit register

@@ -35,21 +35,24 @@
   <li class="nav-item">
     <a class="nav-link active" href="../control/index.php">HomePage</a>
   </li>
-  <?php if (isset($_SESSION['pseudo']) and isset($_SESSION['id'])){?>
+  <?php if (isset($_SESSION['pseudo'])) {
+    ?>
     <li class="nav-item">
       <a class="nav-link" href="../control/project_area.php">Your project</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="../control/register.php">Log out</a>
+      <a class="nav-link" href="../control/index.php?logout='true'">Log out</a>
     </li>
-  <?php}
-  else { ?>
+  <?php
+} else {
+      ?>
   <li class="nav-item">
     <a class="nav-link" href="../control/login.php">Log in</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="../control/register.php">Register</a>
   </li>
-  <?php } ?>
+  <?php
+  } ?>
 </ul>
 </header>

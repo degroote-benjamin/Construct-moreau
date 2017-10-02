@@ -1,6 +1,5 @@
 <?php
 include_once('../model/data.php');
-session_start();
 
 // if click on login submit
 if (isset($_POST['submitlogin'])) {
@@ -9,10 +8,9 @@ if (isset($_POST['submitlogin'])) {
         // if pass verify is true
         $user = get_user($_POST['pseudo']);
         if (password_verify($_POST['pass'], $user['pass'])) {
-            include 'index.php';
             $_SESSION['pseudo']=$user['pseudo'];
             $_SESSION['id']=$user['id_user'];
-
+            include 'index.php';
         } else {
           // return on login.php if pass not true and init error
           $_SESSION['error']['formlogin'] = true;

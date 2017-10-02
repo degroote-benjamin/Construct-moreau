@@ -1,6 +1,9 @@
 <?php
 include_once('../model/data.php');
-
+if(isset($_GET['logout'])){
+  session_unset();
+  session_destroy();
+}
 include 'header.php';
 
 // if id project doesn't exist vue is index
