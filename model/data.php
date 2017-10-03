@@ -172,12 +172,13 @@ function add_user($pseudo,$mail,$pass){
 }
 
 
-function update_task($id){
+function update_task($id,$bool){
   global $bdd;
   $reponse = $bdd->prepare('UPDATE task
-SET finish = true
+SET finish = :bool
 WHERE id_task = :id');
   $reponse->execute(array(
 'id'=>$id,
+'bool'=>$bool
 ));
 }

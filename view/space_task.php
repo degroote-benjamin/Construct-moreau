@@ -11,23 +11,38 @@
         <?php
     foreach ($datatask as $valuetask) {
         ?>
-            <tr>
-                <td>
-                    <?php echo $valuetask['id_task']; ?>
-                </td>
-                <td>
-                    <?php echo $valuetask['task_name'] ?>
-                </td>
-                <td>
-                    <?php echo $valuetask['end_date'] ?>
-                </td>
-                <td>
-                    <a href="../control/task_area.php?updateid=<?php echo $valuetask['id_task']; ?>&amp;id_step=<?php echo $id; ?>"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>
-                <td>
-                    <a href="../control/task_area.php?deleteid=<?php echo $valuetask['id_task']; ?>&amp;id_step=<?php echo $id; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                </td>
-            </tr>
-            <?php
+            <?php if ($valuetask['finish'] == 1){?>
+            <tr class="alert alert-success">
+                <?php  }
+                  else { ?>
+                <tr>
+                    <?php } ?>
+                    <td>
+                        <?php echo $valuetask['id_task']; ?>
+                    </td>
+                    <td>
+                        <?php echo $valuetask['task_name'] ?>
+                    </td>
+                    <td>
+                        <?php echo $valuetask['end_date'] ?>
+                    </td>
+                    <td>
+                        <?php if($valuetask['finish'] == 0){ ?>
+                        <a href="../control/task_area.php?updateidtrue=<?php echo $valuetask['id_task'];?>&amp;id_step=<?php echo $id; ?>">
+                      <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    </a>
+                        <?php }
+                      else { ?>
+                        <a href="../control/task_area.php?updateidfalse=<?php echo $valuetask['id_task'];?>&amp;id_step=<?php echo $id; ?>">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                        </a>
+                        <?php } ?>
+                    </td>
+                    <td>
+                        <a href="../control/task_area.php?deleteid=<?php echo $valuetask['id_task']; ?>&amp;id_step=<?php echo $id; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </td>
+                </tr>
+                <?php
     }
 
    ?>

@@ -9,14 +9,24 @@ $id = $_GET['id_step'];
 else{
   $id= $_POST['id'];
 }
+
+// delete
 if(isset($_GET['deleteid'])){
 delete_task($_GET['deleteid']);
 }
 
-if(isset($_GET['updateid'])){
-update_task($_GET['updateid']);
+// update finish true
+if(isset($_GET['updateidtrue'])){
+update_task($_GET['updateidtrue'],1);
 }
 
+// update finish false
+if(isset($_GET['updateidfalse'])){
+update_task($_GET['updateidfalse'],0);
+}
+
+
+// if submit for add task
 if(isset($_POST['submittask'])){
 if(isset($_POST['task_name']) && isset($_POST['end_date'])){
 add_task($_POST['task_name'],$_POST['end_date'],$id);
