@@ -70,7 +70,7 @@
         </div>
         <div class="form-group">
             <label for="end_date">End date</label>
-            <input class="form-control" id="end_date" type="date" name="end_date" value="" placeholder="end_date">
+            <input class="form-control" id="end_date" type="date" name="end_date" value="" placeholder="YYYY-MM-DD">
         </div>
         <input type="submit" name="submitproject" value="submit" class="btn btn-primary">
     </form>

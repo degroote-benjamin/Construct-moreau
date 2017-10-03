@@ -60,7 +60,7 @@
         </div>
         <div class="form-group">
             <label for="end_date">End date</label>
-            <input type="date" name="end_date" class="form-control" id="end_date" value="" placeholder="date">
+            <input type="date" name="end_date" class="form-control" id="end_date" value="" placeholder="YYYY-MM-DD">
         </div>
         <input type="hidden" name="id" value="<?php echo $id; ?>">
         <input type="submit" name="submittask" value="submit" class="btn btn-primary">
