@@ -12,9 +12,11 @@
     foreach ($datatask as $valuetask) {
         ?>
             <?php if ($valuetask['finish'] == 1){?>
+             <!-- if finish green color -->
             <tr class="alert alert-success">
                 <?php  }
                   else { ?>
+                    <!-- not finish no color -->
                 <tr>
                     <?php } ?>
                     <td>
@@ -27,11 +29,13 @@
                         <?php echo $valuetask['end_date'] ?>
                     </td>
                     <td>
+                      <!-- project not finish -->
                         <?php if($valuetask['finish'] == 0){ ?>
                         <a href="../control/task_area.php?updateidtrue=<?php echo $valuetask['id_task'];?>&amp;id_step=<?php echo $id; ?>">
                       <i class="fa fa-check-square-o" aria-hidden="true"></i>
                     </a>
                         <?php }
+                        // project finish
                       else { ?>
                         <a href="../control/task_area.php?updateidfalse=<?php echo $valuetask['id_task'];?>&amp;id_step=<?php echo $id; ?>">
                         <i class="fa fa-times" aria-hidden="true"></i>
