@@ -2,7 +2,7 @@
 function connect(){
   try
 {
-  $bdd = new PDO('mysql:host=localhost;dbname=CONSTRUCT;charset=utf8', '', '');
+  $bdd = new PDO('mysql:host=localhost;dbname=CONSTRUCT;charset=utf8', 'root', 'root');
 }
 catch (Exception $e)
 {
